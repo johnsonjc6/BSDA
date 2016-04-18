@@ -7875,10 +7875,8 @@ NULL
 #' @examples
 #' 
 #' str(Salinity)
-#' attach(Salinity)
-#' EDA(salinity)
-#' t.test(salinity,conf.level=.99)$conf
-#' detach(Salinity)
+#' EDA(Salinity$salinity)
+#' t.test(Salinity$salinity,conf.level=.99)$conf
 #' 
 NULL
 
@@ -7995,9 +7993,7 @@ NULL
 #' @examples
 #' 
 #' str(Scales)
-#' attach(Scales)
-#' boxplot(reading~Brand,ylab="Reading",xlab="Brand",main="Problem 1.89")
-#' detach(Scales)
+#' boxplot(Scales$reading~Scales$Brand,ylab="Reading",xlab="Brand",main="Problem 1.89")
 #' 
 NULL
 
@@ -8023,10 +8019,8 @@ NULL
 #' @examples
 #' 
 #' str(Schizop2)
-#' attach(Schizop2)
-#' EDA(score)
-#' SIGN.test(score,md=22,alternative="greater")
-#' detach(Schizop2)
+#' EDA(Schizop2$score)
+#' SIGN.test(Schizop2$score,md=22,alternative="greater")
 #' 
 NULL
 
@@ -8052,10 +8046,8 @@ NULL
 #' @examples
 #' 
 #' str(Schizoph)
-#' attach(Schizoph)
-#' EDA(score)
-#' t.test(score,mu=20)
-#' detach(Schizoph)
+#' EDA(Schizoph$score)
+#' t.test(Schizoph$score,mu=20)
 #' 
 NULL
 
@@ -8148,10 +8140,8 @@ NULL
 #' @examples
 #' 
 #' str(Senior)
-#' attach(Senior)
-#' fivenum(reaction)
-#' boxplot(reaction,horizontal=TRUE,main="Problem 1.83 Part d.",col="orange")
-#' detach(Senior)
+#' fivenum(Senior$reaction)
+#' boxplot(Senior$reaction,horizontal=TRUE,main="Problem 1.83 Part d.",col="orange")
 #' 
 NULL
 
@@ -8176,14 +8166,12 @@ NULL
 #' @examples
 #' 
 #' str(Sentence)
-#' attach(Sentence)
 #' stem(months)
 #' EDA(months)
-#' ll <- mean(months)-2*sd(months)
-#' ul <- mean(months)+2*sd(months)
+#' ll <- mean(Sentence$months)-2*sd(Sentence$months)
+#' ul <- mean(Sentence$months)+2*sd(Sentence$months)
 #' limits <- c(ll,ul)
 #' limits
-#' detach(Sentence)
 #' 
 NULL
 
@@ -8278,9 +8266,7 @@ NULL
 #' @examples
 #' 
 #' str(Shoplift)
-#' attach(Shoplift)
-#' summary(lm(loss~sales))
-#' detach(Shoplift)
+#' summary(lm(Shoplift$loss~Shoplift$sales))
 #' 
 NULL
 
@@ -8345,11 +8331,10 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Shuttle)
 #' str(Shuttle)
-#' attach(Shuttle)
-#' model <- lm(autos~shuttle)
+#' model <- lm(Shuttle$autos~Shuttle$shuttle)
 #' summary(model)
-#' detach(Shuttle)
 #' remove(model)
 #' 
 NULL
@@ -8422,14 +8407,13 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Situp)
 #' str(Situp)
-#' attach(Situp)
-#' stem(number)
-#' hist(number,breaks=seq(0,70,10))
-#' hist(number,breaks=seq(0,70,10),right=FALSE,col="blue",prob=TRUE,
+#' stem(Situp$number)
+#' hist(Situp$number,breaks=seq(0,70,10))
+#' hist(Situp$number,breaks=seq(0,70,10),right=FALSE,col="blue",prob=TRUE,
 #' main="Problems 1.46 & 1.47")
-#' lines(density(number),col="red",lwd=3)
-#' detach(Situp)
+#' lines(density(Situp$number),col="red",lwd=3)
 #' 
 NULL
 
@@ -8514,10 +8498,9 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Slc)
 #' str(Slc)
-#' attach(Slc)
-#' EDA(SLC)
-#' detach(Slc)
+#' EDA(Slc$SLC)
 #' 
 NULL
 
@@ -8640,12 +8623,12 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Soccer)
 #' str(Soccer)
 #' attach(Soccer)
-#' stem(weight,scale=2)
-#' hist(weight,breaks=seq(110,210,10),col="orange",
+#' stem(Soccer$weight,scale=2)
+#' hist(Soccer$weight,breaks=seq(110,210,10),col="orange",
 #' main="Problem 1.46 \n Weights of Soccer Players",right=FALSE)
-#' detach(Soccer)
 #' 
 NULL
 
@@ -8669,10 +8652,9 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Social)
 #' str(Social)
-#' attach(Social)
-#' SIGN.test(income,md=27500,alternative="less")
-#' detach(Social)
+#' SIGN.test(Social$income,md=27500,alternative="less")
 #' 
 NULL
 
@@ -8727,10 +8709,9 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(South)
 #' str(South)
-#' attach(South)
-#' boxplot(rate,col="yellow",main="Problem 1.83")
-#' detach(South)
+#' boxplot(South$rate,col="yellow",main="Problem 1.83")
 #' 
 NULL
 
@@ -8852,10 +8833,9 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Sports)
 #' str(Sports)
-#' attach(Sports)
 #' Sports
-#' detach(Sports)
 #' 
 NULL
 
@@ -8910,11 +8890,10 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Stable)
 #' str(Stable)
-#' attach(Stable)
-#' EDA(time)
-#' SIGN.test(time,md=98.5,alternative="greater")
-#' detach(Stable)
+#' EDA(Stable$time)
+#' SIGN.test(Stable$time,md=98.5,alternative="greater")
 #' 
 NULL
 
@@ -9011,12 +8990,11 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Statelaw)
 #' str(Statelaw)
-#' attach(Statelaw)
-#' summary(cost)
-#' EDA(cost)
-#' SIGN.test(cost,md=8,alternative="less")
-#' detach(Statelaw)
+#' summary(Statelaw$cost)
+#' EDA(Statelaw$cost)
+#' SIGN.test(Statelaw$cost,md=8,alternative="less"))
 #' 
 NULL
 
@@ -9069,11 +9047,10 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Step)
 #' str(Step)
-#' attach(Step)
-#' EDA(score)
-#' t.test(score,mu=80,alternative="less")
-#' detach(Step)
+#' EDA(Step$score)
+#' t.test(Step$score,mu=80,alternative="less")
 #' 
 NULL
 
@@ -9099,14 +9076,13 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Stress)
 #' str(Stress)
-#' attach(Stress)
-#' DIF <- Poststre -Prestre
+#' DIF <- Stress$Poststre -Stress$Prestre
 #' qqnorm(DIF)
 #' qqline(DIF)
 #' shapiro.test(DIF)
-#' t.test(Poststre,Prestre,paired=TRUE,alternative="less")
-#' detach(Stress)
+#' t.test(Stress$Poststre,Stress$Prestre,paired=TRUE,alternative="less")
 #' remove(DIF)
 #' 
 NULL
@@ -9131,11 +9107,10 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Study)
 #' str(Study)
-#' attach(Study)
-#' stem(hours)
-#' EDA(hours)
-#' detach(Study)
+#' stem(Study$hours)
+#' EDA(Study$hours)
 #' 
 NULL
 
@@ -9192,10 +9167,9 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Subway)
 #' str(Subway)
-#' attach(Subway)
-#' EDA(time)
-#' detach(Subway)
+#' EDA(Subway$time)
 #' 
 NULL
 
@@ -9220,14 +9194,13 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Sunspot)
 #' str(Sunspot)
 #' attach(Sunspot)
-#' plot(year,sunspots,type="l",main="Yearly Sunspots")    # Using standard plot
+#' plot(Sunspot$year,Sunspot$sunspots,type="l",main="Yearly Sunspots")    # Using standard plot
 #' library(lattice)
-#' xyplot(sunspots ~ 1700:2000, xlab = "", type = "l",main="Yearly Sunspots")
-#' xyplot(sunspots ~ 1700:2000, xlab = "", type = "l", aspect="xy",
-#' main="Yearly Sunspots")
-#' detach(Sunspot)
+#' xyplot(Sunspot$sunspots ~ 1700:2000, xlab = "", type = "l",main="Yearly Sunspots")
+#' xyplot(Sunspot$sunspots ~ 1700:2000, xlab = "", type = "l", aspect="xy",main="Yearly Sunspots")
 #' 
 NULL
 
@@ -9347,11 +9320,10 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Tablrock)
 #' str(Tablrock)
-#' attach(Tablrock)
-#' EDA(X03)
-#' t.test(X03,conf.level=.99)$conf
-#' detach(Tablrock)
+#' EDA(Tablrock$X03)
+#' t.test(Tablrock$X03,conf.level=.99)$conf
 #' 
 NULL
 
@@ -9390,11 +9362,9 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Teacher)
 #' str(Teacher)
-#' attach(Teacher)
-#' boxplot(X1973.74,X1983.84,X1993.94,
-#' names=c("1973-1974","1983-1984","1993-1994"),ylab="Average Salary")
-#' detach(Teacher)
+#' boxplot(Teacher$X1973.74,Teacher$X1983.84,Teacher$X1993.94,names=c("1973-1974","1983-1984","1993-1994"),ylab="Average Salary")
 #' 
 NULL
 
@@ -9418,12 +9388,11 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Tenness)
 #' str(Tenness)
-#' attach(Tenness)
-#' EDA(score)
-#' t.test(score,mu=30,alternative="less")
-#' SIGN.test(score,md=30,alternative="less")
-#' detach(Tenness)
+#' EDA(Tenness$score)
+#' t.test(Tenness$score,mu=30,alternative="less")
+#' SIGN.test(Tenness$score,md=30,alternative="less")
 #' 
 NULL
 
@@ -9450,13 +9419,12 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Tensile)
 #' str(Tensile)
-#' attach(Tensile)
-#' boxplot(Run.1,Run.2,names=c("Run 1","Run 2"),col=c("red","Blue"))
-#' boxplot(Tensile~Run,names=c("Run 1","Run 2"),col=c("red","Blue"))
-#' t.test(Tensile~Run)
-#' t.test(Run.1,Run.2)
-#' detach(Tensile)
+#' boxplot(Tensile$Run.1,Tensile$Run.2,names=c("Run 1","Run 2"),col=c("red","Blue"))
+#' boxplot(Tensile$Tensile~Tensile$Run,names=c("Run 1","Run 2"),col=c("red","Blue"))
+#' t.test(Tensile$Tensile~Tensile$Run)
+#' t.test(Tensile$Run.1,Tensile$Run.2)
 #' 
 NULL
 
@@ -9480,10 +9448,9 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Test1)
 #' str(Test1)
-#' attach(Test1)
-#' EDA(test1)
-#' detach(Test1)
+#' EDA(Test1$test1)
 #' 
 NULL
 
@@ -9509,11 +9476,10 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Thermal)
 #' str(Thermal)
-#' attach(Thermal)
-#' model <- lm(loss~temp)
+#' model <- lm(Thermal$loss~Thermal$temp)
 #' summary(model)
-#' detach(Thermal)
 #' 
 NULL
 
@@ -9632,6 +9598,7 @@ NULL
 #' @examples
 #' 
 #' data(Tiaa)
+#' str(Tiaa)
 #' 
 NULL
 
@@ -9655,10 +9622,9 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Ticket)
 #' str(Ticket)
-#' attach(Ticket)
-#' EDA(time)
-#' detach(Ticket)
+#' EDA(Ticket$time)
 #' 
 NULL
 
@@ -9765,10 +9731,10 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Tort)
+#' Tort
 #' str(Tort)
-#' attach(Tort)
-#' EDA(months)
-#' detach(Tort)
+#' EDA(Tort$months)
 #' 
 NULL
 
@@ -9809,14 +9775,13 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Toxic)
 #' str(Toxic)
-#' attach(Toxic)
-#' hist(minority,prob=TRUE)
-#' lines(density(minority))
-#' SIGN.test(sites,conf.level=.98)
-#' boxplot(sites~region)
-#' kruskal.test(sites~as.factor(region))
-#' detach(Toxic)
+#' hist(Toxic$minority,prob=TRUE)
+#' lines(density(Toxic$minority))
+#' SIGN.test(Toxic$sites,conf.level=.98)
+#' boxplot(Toxic$sites~Toxic$region)
+#' kruskal.test(Toxic$sites~as.factor(region))
 #' 
 NULL
 
@@ -9841,11 +9806,9 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Track15)
 #' str(Track15)
-#' attach(Track15)
-#' plot(Year,X1500m,type="l",lwd=2,lty=2,col="red",xlab="Year",
-#' ylab="1500m Time (seconds)",main="Problem 1.36")       
-#' detach(Track15) 
+#' plot(Track15$Year,Track15$X1500m,type="l",lwd=2,lty=2,col="red",xlab="Year",ylab="1500m Time (seconds)",main="Problem 1.36")      
 #' 
 NULL
 
@@ -9887,11 +9850,10 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Track)
 #' str(Track)
-#' attach(Track)
 #' cor(Track[,2:8])
 #' pairs(Track[,2:8])
-#' detach(Track)
 #' 
 NULL
 
@@ -9919,10 +9881,9 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Treatments)
 #' str(Treatments)
-#' attach(Treatments)
-#' anova(lm(Treatmnt~as.factor(Group)))
-#' detach(Treatments)
+#' anova(lm(Treatments$Treatmnt~as.factor(Treatments$Group)))
 #' 
 NULL
 
@@ -9946,11 +9907,10 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Trees)
 #' str(Trees)
-#' attach(Trees)
-#' stem(number)
-#' hist(number,breaks=seq(60,110,10),right=FALSE,col="green",main="Problem 1.50")
-#' detach(Trees)
+#' stem(Trees$number)
+#' hist(Trees$number,breaks=seq(60,110,10),right=FALSE,col="green",main="Problem 1.50")
 #' 
 NULL
 
@@ -9979,10 +9939,9 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Trucks)
 #' str(Trucks)
-#' attach(Trucks)
 #' anova(lm(gas.mileage~truck))
-#' detach(Trucks)
 #' 
 NULL
 
@@ -10021,11 +9980,11 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Tv)
 #' str(Tv)
 #' attach(Tv)
-#' plot(percent,test,col="blue")
-#' cor(percent,test,use="complete.obs")
-#' detach(Tv)
+#' plot(Tv$percent,Tv$test,col="blue")
+#' cor(Tv$percent,Tv$test,use="complete.obs")
 #' 
 NULL
 
@@ -10091,17 +10050,12 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Undergrad)
 #' str(Undergrad)
-#' attach(Undergrad)
-#' stripchart(GPA~Class,method="stack",col=c("blue","red","green","lightblue"),
-#' pch=19,main="GPA versus Class")
-#' stripchart(GPA~Gender,method="stack",col=c("red","blue"),pch=19,
-#' main="GPA versus Gender")
-#' stripchart(SAT~Drops,method="stack",col=c("blue","red","green","lightblue"),
-#' pch=19,main="SAT versus Drops")
-#' stripchart(Drops~Gender,method="stack",col=c("red","blue"),pch=19,
-#' main="Drops versus Gender")
-#' detach(Undergrad)
+#' stripchart(Undergrad$GPA~Undergrad$Class,method="stack",col=c("blue","red","green","lightblue"),pch=19,main="GPA versus Class")
+#' stripchart(Undergrad$GPA~Undergrad$Gender,method="stack",col=c("red","blue"),pch=19,main="GPA versus Gender")
+#' stripchart(Undergrad$SAT~Undergrad$Drops,method="stack",col=c("blue","red","green","lightblue"),pch=19,main="SAT versus Drops")
+#' stripchart(Undergrad$Drops~Undergrad$Gender,method="stack",col=c("red","blue"),pch=19,main="Drops versus Gender")
 #' 
 NULL
 
@@ -10126,11 +10080,10 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Vacation)
 #' str(Vacation)
-#' attach(Vacation)
-#' EDA(number)
-#' t.test(number,mu=24)
-#' detach(Vacation)
+#' EDA(Vacation$number)
+#' t.test(Vacation$number,mu=24)
 #' 
 NULL
 
@@ -10158,17 +10111,16 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Vaccine)
 #' str(Vaccine)
-#' attach(Vaccine)
-#' fn <- fivenum(number)
+#' fn <- fivenum(Vaccine$number)
 #' fn
-#' iqr <- IQR(number)
+#' iqr <- IQR(Vaccine$number)
 #' ll <- fn[2]-1.5*iqr
 #' ul <- fn[4]+1.5*iqr
 #' limits <- c(ll,ul)
 #' limits
-#' boxplot(number)
-#' detach(Vaccine)
+#' boxplot(Vaccine$number)
 #' 
 NULL
 
@@ -10198,11 +10150,10 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Vehicle)
 #' str(Vehicle)
-#' attach(Vehicle)
 #' Vehicle
 #' chisq.test(Vehicle[,2:6])
-#' detach(Vehicle)
 #' 
 NULL
 
@@ -10230,11 +10181,10 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Verbal)
 #' str(Verbal)
-#' attach(Verbal)
-#' model <- lm(verbal~number)
+#' model <- lm(Verbal$verbal~Verbal$number)
 #' summary(model)
-#' detach(Verbal)
 #' remove(model)
 #' 
 NULL
@@ -10262,14 +10212,13 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Viscosit)
 #' str(Victoria)
-#' attach(Victoria)
-#' plot(sunspot,level)
-#' model <- lm(level~sunspot)
+#' plot(Victoria$sunspot,Victoria$level)
+#' model <- lm(Victoria$level~Victoria$sunspot)
 #' abline(model)
-#' cor(sunspot,level)
+#' cor(Victoria$sunspot,Victoria$level)
 #' model
-#' detach(Victoria)
 #' 
 NULL
 
@@ -10321,12 +10270,11 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Visual)
 #' str(Visual)
-#' attach(Visual)
-#' stem(visual)
-#' fivenum(visual)
-#' boxplot(visual)
-#' detach(Visual)
+#' stem(Visual$visual)
+#' fivenum(Visual$visual)
+#' boxplot(Visual$visual)
 #' 
 NULL
 
@@ -10388,11 +10336,10 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Wastewat)
 #' str(Wastewat)
-#' attach(Wastewat)
-#' model <- lm(number~gallons)
+#' model <- lm(Wastewat$number~Wastewat$gallons)
 #' summary(model)
-#' detach(Wastewat)
 #' remove(model)
 #' 
 NULL
@@ -10421,12 +10368,11 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Weather94)
 #' str(Weather94)
-#' attach(Weather94)
-#' names(Number) <- Weather.Type
-#' barplot(Number,col="lightblue",las=2,cex.names=.65,main="Problem 1.30") 
+#' names(Weather94$Number) <- Weather94$Weather.Type
+#' barplot(Weather94$Number,col="lightblue",las=2,cex.names=.65,main="Problem 1.30") 
 #' # las=2 places bar names vertically
-#' detach(Weather94)
 #' 
 NULL
 
@@ -10453,13 +10399,12 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Wheat)
 #' str(Wheat)
-#' attach(Wheat)
 #' par(mfrow=c(1,2))
-#' plot(year,earnings)
-#' plot(year,price)
+#' plot(Wheat$year,Wheat$earnings)
+#' plot(Wheat$year,Wheat$price)
 #' par(mfrow=c(1,1))
-#' detach(Wheat)
 #' 
 NULL
 
@@ -10489,10 +10434,9 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Windmill)
 #' str(Windmill)
-#' attach(Windmill)
-#' summary(lm(output~velocity))
-#' detach(Windmill)
+#' summary(lm(Windmill$output~Windmill$velocity))
 #' 
 NULL
 
@@ -10517,10 +10461,9 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Window)
 #' str(Window)
-#' attach(Window)
-#' SIGN.test(Leakage,md=.125,alternative="greater")
-#' detach(Window)
+#' SIGN.test(Window$Leakage,md=.125,alternative="greater")
 #' 
 NULL
 
@@ -10556,13 +10499,12 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' data(Wins)
 #' str(Wins)
-#' attach(Wins)
-#' plot(era,wins)
-#' model <- lm(wins~era)
+#' plot(Wins$era,Wins$wins)
+#' model <- lm(Wins$wins~Wins$era)
 #' abline(model)
 #' summary(model)
-#' detach(Wins)
 #' remove(model)
 #' 
 NULL
